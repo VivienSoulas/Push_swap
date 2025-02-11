@@ -1,10 +1,10 @@
 NAME	=	push_swap
 
 SRC		=	push_swap.c \
-			actions.c \
+			operations.c \
 			utils.c \
 			free.c \
-			check_input.c \
+			checkers.c \
 			sort.c
 
 OBJS	=	$(SRC:%.c=%.o)

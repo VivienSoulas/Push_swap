@@ -10,16 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
+// #include <limits.h>
+// #include <stdio.h>
 
 // int	ft_atoi(const char *nptr);
 
 // int	main(void)
 // {
-// 	char	*nptr = NULL;
-
-// 	printf("%d\n", ft_atoi(nptr));
-// 	return (0);
+//     const char *test_str = "2147483648986"; // INT_MAX + 1
+//     printf("Result: %d\n", ft_atoi(test_str));
+//     return (0);
 // }
 
 int	ft_atoi(const char *nptr)

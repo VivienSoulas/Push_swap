@@ -57,7 +57,7 @@ void	ft_push(t_stack **src, t_stack **dest, char c)
 
 // ra = all elements of a go one up; //first element becomes last
 // rb = all elements of b go one up; //first element becomes last
-void	ft_one_up(t_stack **head, char c)
+void	ft_rotate(t_stack **head, char c)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -78,7 +78,7 @@ void	ft_one_up(t_stack **head, char c)
 
 // rra = all elements of a go one down; //last become first
 // rrb = all elements of b go one down; //last become first
-void	ft_one_down(t_stack **head, char c)
+void	ft_reverse_rotate(t_stack **head, char c)
 {
 	t_stack	*first;
 	t_stack	*last;
