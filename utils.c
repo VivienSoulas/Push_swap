@@ -57,48 +57,33 @@ void	ft_reverse_stack(t_stack **head)
 }
 
 // modified atoi to rule out above INT_MAX and bellow INT_MIN
-int	ft_atoi_flag(char *str, int *error, int *keys)
+int	ft_atoi_flag(char *str, int *error)
 {
+	int			i;
 	int			sign;
 	long long	number;
 
-	*keys = 0;
+	i = 0;
 	sign = 1;
 	number = 0;
-	if (str[*keys] == '-')
+	if (str[i] == '-')
 	{
 		sign *= -1;
-		(*keys)++;
+		i++;
 	}
-	else if (str[*keys] == '+')
-		(*keys)++;
-	while (str[*keys])
+	else if (str[i] == '+')
+		i++;
+	while (str[i])
 	{
-		number = number * 10 + (str[*keys] - '0');
+		number = number * 10 + (str[i] - '0');
 		if (number * sign > INT_MAX || number * sign < INT_MIN)
 		{
 			*error = 1;
 			return (0);
 		}
-		(*keys)++;
+		i++;
 	}
 	return (number * sign);
-}
-
-int	ft_max(t_stack **head)
-{
-	t_stack	*current;
-	int		max;
-
-	max = INT_MIN;
-	current = *head;
-	while (current)
-	{
-		if (current->content > max)
-			max = current->content;
-		current = current->next;
-	}
-	return (max);
 }
 
 /* =================================================================== */
@@ -109,7 +94,7 @@ void	ft_print_stack(t_stack **head)
 	current = *head;
 	while (current)
 	{
-		ft_printf("%i\n", current->content);
+		ft_printf("value = %i, index = %i\n", current->content, current->index);
 		current = current->next;
 	}
 }

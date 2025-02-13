@@ -33,6 +33,12 @@ int	main(int argc, char **argv)
 	if (ft_check_dup(&stack_a) == 1)
 		return (ft_free_stack(&stack_a), ft_printf("Error\n"), 1);
 	ft_reverse_stack(&stack_a);
+
+/*===================================*/
+ft_printf("\n|!| bdfore sorting |!|\n");
+ft_print_stack(&stack_a);
+/*===================================*/
+
 	if (ft_check_list(&stack_a) == 1)
 		ft_sort(&stack_a);
 
@@ -105,11 +111,10 @@ int	ft_add_to_stack(t_stack **head, char *arg)
 {
 	t_stack	*new_node;
 	int		error;
-	int		keys;
+	int		value;
 
 	error = 0;
-	keys = 0;
-	ft_atoi_flag(arg, &error, &keys);
+	value = ft_atoi_flag(arg, &error);
 	if (error == 1)
 	{
 		ft_printf("Error\n");
@@ -118,8 +123,8 @@ int	ft_add_to_stack(t_stack **head, char *arg)
 	new_node = malloc(sizeof(t_stack));
 	if (new_node == NULL)
 		return (ft_free_stack(head), 1);
-	new_node->content = ft_atoi_flag(arg, &error, &keys);
-	new_node->keys = keys;
+	new_node->content = value;
+	new_node->index = -1;
 	new_node->next = *head;
 	new_node->prev = NULL;
 	if (*head != NULL)

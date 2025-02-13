@@ -15,23 +15,16 @@
 void	ft_sort(t_stack **head)
 {
 	int		i;
-	t_stack	*current;
 	t_stack	*stack_b;
 
-	i = 0;
 	stack_b = NULL;
-	current = *head;
-	while (current)
-	{
-		i++;
-		current = current->next;
-	}
+	i = ft_set_index_to_nodes(head);
 	if (i == 2)
 		ft_sort_2(head);
 	else if (i == 3)
 		ft_sort_3(head);
-	//else
-	//	ft_radix(head, &stack_b);
+	else
+		ft_radix(head, &stack_b);
 }
 
 void	ft_sort_2(t_stack **head)

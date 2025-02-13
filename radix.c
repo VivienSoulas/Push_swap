@@ -12,39 +12,40 @@
 
 #include "push_swap.h"
 
-int	find_bits(int max_index)
-{
-	int	max_bits;
-
-	max_bits = 0;
-	while (max_index > 0)
-	{
-		max_index = max_index >> 1;
-		max_bits++;
-	}
-	return (max_bits);
-}
-
+// sort the nodes by index number using binary sort (bits)
+// i has to pass max_bits times to sort the stack (example 13 = 1101 => 4 bits)
+//
+// (current_val & (1 << i)) == 0 : here & compare each bits of two numbers
+// if both are 1 the result of & is 0, otherwise it is 1
+//
+// i = 1 => 1 = 0001 / shift 1 << 1 => 0010 (aka 2)
+// example 0101 = 5 binary / 0010 = 2 bianry
+// 0 & 0 = 0 -- 1 & 0 = 0 -- 0 & 1 = 0 -- 1 & 0 = 0
+// comparaison = 0 => moved to stack_b
+//
+// finally move all stack_b back into a;
+// actual sorting was done during the indexing
 void	ft_radix(t_stack **stack_a, t_stack **stack_b)
 {
-	int	max_index;
 	int	max_bits;
+	int	size;
 	int	i;
 	int	j;
+	int	current_val;
 
-	max_bits = 0;
-	max_index = ft_max(stack_a);
-	max_bits = find_bits(max_index);
+	max_bits = find_bits(ft_max_index(stack_a));
+	size = ft_stack_size(stack_a);
 	i = 0;
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j <= max_index)
+		while (j < size)
 		{
-			if (((*stack_a)->keys >> i) & 1)
-				ft_rotate(stack_a, 'a');
-			else
+			current_val = (*stack_a)->index;
+			if ((current_val & (1 << i)) == 0)
 				ft_push(stack_a, stack_b, 'b');
+			else
+				ft_rotate(stack_a, 'a');
 			j++;
 		}
 		while (*stack_b != NULL)
@@ -52,3 +53,34 @@ void	ft_radix(t_stack **stack_a, t_stack **stack_b)
 		i++;
 	}
 }
+
+// void	ft_radix(t_stack **stack_a, t_stack **stack_b)
+// {
+// 	int	max_index;
+// 	int	max_bits;
+// 	int	i;
+// 	int	j;
+// 	int	size;
+
+// 	max_index = ft_max_index(stack_a);
+// 	max_bits = find_bits(max_index);
+// 	size = ft_stack_size(stack_a);
+// 	i = 0;
+// 	while (i < max_bits)
+// 	{
+// 		j = 0;
+// 		while (j <= size)
+// 		{
+// 			if (!((*stack_a)->index & (1 << i)))
+// 			{
+// 				ft_rotate(stack_a, 'a');
+// 			}
+// 			else
+// 				ft_push(stack_a, stack_b, 'b');
+// 			j++;
+// 		}
+// 		while (*stack_b != NULL)
+// 			ft_push(stack_b, stack_a, 'a');
+// 		i++;
+// 	}
+// }

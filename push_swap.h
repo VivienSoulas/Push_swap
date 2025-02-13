@@ -24,7 +24,7 @@
 typedef struct s_stack
 {
 	int					content;
-	int					keys;
+	int					index;
 	struct s_stack		*next;
 	struct s_stack		*prev;
 }	t_stack;
@@ -55,6 +55,12 @@ void	ft_sort_2(t_stack **head);
 void	ft_sort_3(t_stack **head);
 void	ft_radix(t_stack **stack_a, t_stack **stack_b);
 
+// sort utils
+int		ft_max_index(t_stack **head);
+int		ft_set_index_to_nodes(t_stack **head);
+int		ft_stack_size(t_stack **head);
+int		find_bits(int max_index);
+
 /*=================================================*/
 void	ft_print_stack(t_stack **head);
 /*==================================================*/
@@ -63,7 +69,6 @@ void	ft_print_stack(t_stack **head);
 int		ft_search(char *arg, char c);
 t_stack	*ft_last_node(t_stack *head);
 void	ft_reverse_stack(t_stack **head);
-int		ft_atoi_flag(char *str, int *error, int *keys);
-int		ft_max(t_stack **head);
+int		ft_atoi_flag(char *str, int *error);
 
 #endif
