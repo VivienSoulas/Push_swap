@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:25 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:41:00 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/13 17:45:50 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	ft_atoi_flag(char *str, int *error, int *keys)
 	int			sign;
 	long long	number;
 
+	*keys = 0;
 	sign = 1;
 	number = 0;
 	if (str[*keys] == '-')

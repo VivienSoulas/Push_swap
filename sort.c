@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:22 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:36:26 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/13 17:46:10 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	ft_sort(t_stack **head)
 		ft_sort_2(head);
 	else if (i == 3)
 		ft_sort_3(head);
-	else
-		ft_radix(head, &stack_b);
+	//else
+	//	ft_radix(head, &stack_b);
 }
 
 void	ft_sort_2(t_stack **head)
