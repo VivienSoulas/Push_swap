@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:12:56 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 15:12:57 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/13 17:34:43 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,10 @@ int	ft_check_arg(char *arg)
 int	ft_check_list(t_stack **head)
 {
 	t_stack	*current;
-	//t_stack	*next;
 
 	current = *head;
 	while (current && current->next)
 	{
-		//next = current->next;
 		if (current->content > current->next->content)
 			return (1);
 		current = current->next;

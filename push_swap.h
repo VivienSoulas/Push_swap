@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:19 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:04:07 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/13 17:27:59 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	ft_sort(t_stack **head);
 void	ft_sort_2(t_stack **head);
 void	ft_sort_3(t_stack **head);
 void	ft_radix(t_stack **stack_a, t_stack **stack_b);
-void	ft_count_sort(t_stack **head, int ext);
 
 /*=================================================*/
 void	ft_print_stack(t_stack **head);
@@ -64,6 +63,7 @@ void	ft_print_stack(t_stack **head);
 int		ft_search(char *arg, char c);
 t_stack	*ft_last_node(t_stack *head);
 void	ft_reverse_stack(t_stack **head);
-int		ft_atoi_flag(char *str, int *error);
+int		ft_atoi_flag(char *str, int *error, int *keys);
+int		ft_max(t_stack **head);
 
 #endif

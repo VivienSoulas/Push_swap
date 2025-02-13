@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:14 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:04:46 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/13 17:42:02 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	main(int argc, char **argv)
 
 /*===================================*/
 ft_printf("\n|!| final stack |!|\n");
+ft_print_stack(&stack_a);
 /*===================================*/
 
-ft_print_stack(&stack_a);
 	ft_free_stack(&stack_a);
 	return (EXIT_SUCCESS);
 }
@@ -105,9 +105,11 @@ int	ft_add_to_stack(t_stack **head, char *arg)
 {
 	t_stack	*new_node;
 	int		error;
+	int		keys;
 
 	error = 0;
-	ft_atoi_flag(arg, &error);
+	keys = 0;
+	ft_atoi_flag(arg, &error, &keys);
 	if (error == 1)
 	{
 		ft_printf("Error\n");
@@ -116,7 +118,8 @@ int	ft_add_to_stack(t_stack **head, char *arg)
 	new_node = malloc(sizeof(t_stack));
 	if (new_node == NULL)
 		return (ft_free_stack(head), 1);
-	new_node->content = ft_atoi_flag(arg, &error);
+	new_node->content = ft_atoi_flag(arg, &error, &keys);
+	new_node->keys = keys;
 	new_node->next = *head;
 	new_node->prev = NULL;
 	if (*head != NULL)

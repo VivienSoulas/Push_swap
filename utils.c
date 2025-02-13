@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:25 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:04:15 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/13 17:41:00 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,33 +57,47 @@ void	ft_reverse_stack(t_stack **head)
 }
 
 // modified atoi to rule out above INT_MAX and bellow INT_MIN
-int	ft_atoi_flag(char *str, int *error)
+int	ft_atoi_flag(char *str, int *error, int *keys)
 {
-	int			i;
 	int			sign;
 	long long	number;
 
-	i = 0;
 	sign = 1;
 	number = 0;
-	if (str[i] == '-')
+	if (str[*keys] == '-')
 	{
 		sign *= -1;
-		i++;
+		(*keys)++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i])
+	else if (str[*keys] == '+')
+		(*keys)++;
+	while (str[*keys])
 	{
-		number = number * 10 + (str[i] - '0');
+		number = number * 10 + (str[*keys] - '0');
 		if (number * sign > INT_MAX || number * sign < INT_MIN)
 		{
 			*error = 1;
 			return (0);
 		}
-		i++;
+		(*keys)++;
 	}
 	return (number * sign);
+}
+
+int	ft_max(t_stack **head)
+{
+	t_stack	*current;
+	int		max;
+
+	max = INT_MIN;
+	current = *head;
+	while (current)
+	{
+		if (current->content > max)
+			max = current->content;
+		current = current->next;
+	}
+	return (max);
 }
 
 /* =================================================================== */
