@@ -32,7 +32,7 @@ int	ft_check_arg(char *arg)
 		i++;
 	while (arg[i])
 	{
-		if (ft_isdigit(arg[i]) != 1)
+		if (ft_isdigit(arg[i]) != 1 || arg[i] == '/')
 			return (1);
 		i++;
 	}

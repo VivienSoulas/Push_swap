@@ -35,23 +35,34 @@ void	ft_swap(t_stack **head, char c)
 // pb = first element top of a goes top of b; //does nothing is a is empty;
 void	ft_push(t_stack **src, t_stack **dest, char c)
 {
-	t_stack	*first_a;
-	t_stack	*second_a;
 	t_stack	*first_b;
+	t_stack	*second_b;
+	t_stack	*first_a;
 
+// src = b
+// dest = a;
+// if head_b == NULL
 	if (*src == NULL)
 		return ;
-	first_a = *src;
-	second_a = first_a->next;
-	first_b = *dest;
-	*src = second_a;
-	if (second_a != NULL)
-		second_a->prev = NULL;
-	first_a->next = first_b;
-	if (first_b != NULL)
-		first_b->prev = first_a;
-	first_a->prev = NULL;
-	*dest = first_a;
+// asigments
+	first_b = *src;
+	second_b = first_b->next;
+	first_a = *dest;
+
+// changing
+	*dest = first_b;
+	if (first_a != NULL)
+	{
+		first_a->prev = first_b;
+		first_b->next = first_a;
+	}
+	if (second_b != NULL)
+	{
+		*src = second_b;
+		second_b->prev = NULL;
+	}
+	else if (second_b == NULL)
+		*src = NULL;
 	ft_printf("p%c\n", c);
 }
 
