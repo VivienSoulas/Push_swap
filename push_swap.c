@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 15:13:14 by vsoulas           #+#    #+#             */
+/*   Updated: 2025/02/13 17:04:46 by vsoulas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 // stack is loaded with last arg input = top of stack;
@@ -24,8 +36,11 @@ int	main(int argc, char **argv)
 	if (ft_check_list(&stack_a) == 1)
 		ft_sort(&stack_a);
 
-ft_print_stack(&stack_a);
+/*===================================*/
+ft_printf("\n|!| final stack |!|\n");
+/*===================================*/
 
+ft_print_stack(&stack_a);
 	ft_free_stack(&stack_a);
 	return (EXIT_SUCCESS);
 }

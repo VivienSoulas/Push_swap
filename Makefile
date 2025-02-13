@@ -5,7 +5,8 @@ SRC		=	push_swap.c \
 			utils.c \
 			free.c \
 			checkers.c \
-			sort.c
+			sort.c \
+			radix.c \
 
 OBJS	=	$(SRC:%.c=%.o)
 

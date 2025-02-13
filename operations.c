@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 15:12:49 by vsoulas           #+#    #+#             */
+/*   Updated: 2025/02/13 17:07:44 by vsoulas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* -------------------------------
 stack a; full of random numbers
 stack b; empty
@@ -39,29 +51,25 @@ void	ft_push(t_stack **src, t_stack **dest, char c)
 	t_stack	*second_b;
 	t_stack	*first_a;
 
-// src = b
-// dest = a;
-// if head_b == NULL
 	if (*src == NULL)
 		return ;
-// asigments
 	first_b = *src;
 	second_b = first_b->next;
 	first_a = *dest;
-
-// changing
 	*dest = first_b;
 	if (first_a != NULL)
 	{
 		first_a->prev = first_b;
 		first_b->next = first_a;
 	}
+	else
+		first_b->next = NULL;
 	if (second_b != NULL)
 	{
 		*src = second_b;
 		second_b->prev = NULL;
 	}
-	else if (second_b == NULL)
+	else
 		*src = NULL;
 	ft_printf("p%c\n", c);
 }

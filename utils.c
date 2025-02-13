@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 15:13:25 by vsoulas           #+#    #+#             */
+/*   Updated: 2025/02/13 17:04:15 by vsoulas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
+// implicitly names, find the last node of the stack
 t_stack	*ft_last_node(t_stack *head)
 {
 	if (head)
@@ -10,6 +23,7 @@ t_stack	*ft_last_node(t_stack *head)
 	return (head);
 }
 
+// searching for ' ' within a string
 int	ft_search(char *arg, char c)
 {
 	int	i;
@@ -24,6 +38,7 @@ int	ft_search(char *arg, char c)
 	return (0);
 }
 
+// function to reverse the stack
 void	ft_reverse_stack(t_stack **head)
 {
 	t_stack	*current;
@@ -71,6 +86,7 @@ int	ft_atoi_flag(char *str, int *error)
 	return (number * sign);
 }
 
+/* =================================================================== */
 void	ft_print_stack(t_stack **head)
 {
 	t_stack	*current;
@@ -82,3 +98,4 @@ void	ft_print_stack(t_stack **head)
 		current = current->next;
 	}
 }
+/* =================================================================== */
