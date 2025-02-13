@@ -43,15 +43,15 @@ int	ft_check_arg(char *arg)
 int	ft_check_list(t_stack **head)
 {
 	t_stack	*current;
-	t_stack	*next;
+	//t_stack	*next;
 
 	current = *head;
-	next = current->next;
-	while (next)
+	while (current && current->next)
 	{
-		if (current->content > next->content)
+		//next = current->next;
+		if (current->content > current->next->content)
 			return (1);
-		next = next->next;
+		current = current->next;
 	}
 	return (0);
 }

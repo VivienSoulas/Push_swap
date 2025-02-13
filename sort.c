@@ -16,6 +16,9 @@ void	ft_sort(t_stack **head)
 		ft_sort_2(head);
 	else if (i == 3)
 		ft_sort_3(head);
+	// more code for 4, 5 and 10 maybe ?
+	//else
+	//	ft_radix(head);
 }
 
 void	ft_sort_2(t_stack **head)
@@ -58,4 +61,31 @@ void	ft_sort_3(t_stack **head)
 		if (current->content > next->content)
 			ft_swap(head, 'a');
 	}
+}
+
+void	ft_radix(t_stack **head)
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	int		max;
+
+	stack_a = *head;
+	stack_b = NULL;
+	max = ft_max(head);
+}
+
+int	ft_max(t_stack **head)
+{
+	t_stack	*current;
+	int		max;
+
+	max = INT_MIN;
+	current = *head;
+	while (current)
+	{
+		if (current->content > max)
+			max = current->content;
+		current = current->next;
+	}
+	return (max);
 }

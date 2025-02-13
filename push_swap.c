@@ -21,11 +21,10 @@ int	main(int argc, char **argv)
 	if (ft_check_dup(&stack_a) == 1)
 		return (ft_free_stack(&stack_a), ft_printf("Error\n"), 1);
 	ft_reverse_stack(&stack_a);
-	ft_sort(&stack_a);
-
 	if (ft_check_list(&stack_a) == 1)
-		ft_printf("Error sorting\n");
-	ft_print_stack(&stack_a);
+		ft_sort(&stack_a);
+
+ft_print_stack(&stack_a);
 
 	ft_free_stack(&stack_a);
 	return (EXIT_SUCCESS);
@@ -75,6 +74,7 @@ int	ft_arg_to_stack(char **argv, t_stack **head)
 		{
 			if (ft_check_arg(argv[i]) == 1)
 			{
+				ft_free_stack(head);
 				ft_printf("Error\n");
 				return (EXIT_FAILURE);
 			}
