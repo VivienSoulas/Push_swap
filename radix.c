@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:21:58 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:35:35 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:15:41 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,34 +53,3 @@ void	ft_radix(t_stack **stack_a, t_stack **stack_b)
 		i++;
 	}
 }
-
-// void	ft_radix(t_stack **stack_a, t_stack **stack_b)
-// {
-// 	int	max_index;
-// 	int	max_bits;
-// 	int	i;
-// 	int	j;
-// 	int	size;
-
-// 	max_index = ft_max_index(stack_a);
-// 	max_bits = find_bits(max_index);
-// 	size = ft_stack_size(stack_a);
-// 	i = 0;
-// 	while (i < max_bits)
-// 	{
-// 		j = 0;
-// 		while (j <= size)
-// 		{
-// 			if (!((*stack_a)->index & (1 << i)))
-// 			{
-// 				ft_rotate(stack_a, 'a');
-// 			}
-// 			else
-// 				ft_push(stack_a, stack_b, 'b');
-// 			j++;
-// 		}
-// 		while (*stack_b != NULL)
-// 			ft_push(stack_b, stack_a, 'a');
-// 		i++;
-// 	}
-// }

@@ -6,13 +6,23 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:14 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:45:04 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:26:04 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+// function to count operations:
+//int g_operation_count = 0;
+//void increment_operation_count()
+//{
+//    g_operation_count++;
+//}
 
-// stack is loaded with last arg input = top of stack;
+// stack is loaded with last arg input = top of stack, so we reverse the stack;
+// print operation count and final stack:
+//ft_printf("\n|!| final stack |!|\n");
+//ft_print_stack(&stack_a);
+// printf("Total operations: %d\n", g_operation_count);
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -33,20 +43,8 @@ int	main(int argc, char **argv)
 	if (ft_check_dup(&stack_a) == 1)
 		return (ft_free_stack(&stack_a), ft_printf("Error\n"), 1);
 	ft_reverse_stack(&stack_a);
-
-/*===================================*/
-ft_printf("\n|!| bdfore sorting |!|\n");
-ft_print_stack(&stack_a);
-/*===================================*/
-
 	if (ft_check_list(&stack_a) == 1)
 		ft_sort(&stack_a);
-
-/*===================================*/
-ft_printf("\n|!| final stack |!|\n");
-ft_print_stack(&stack_a);
-/*===================================*/
-
 	ft_free_stack(&stack_a);
 	return (EXIT_SUCCESS);
 }
@@ -122,7 +120,7 @@ int	ft_add_to_stack(t_stack **head, char *arg)
 	}
 	new_node = malloc(sizeof(t_stack));
 	if (new_node == NULL)
-		return (ft_free_stack(head), 1);
+		return (1);
 	new_node->content = value;
 	new_node->index = -1;
 	new_node->next = *head;

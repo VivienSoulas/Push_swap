@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:19 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:27:59 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:19:05 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ int		ft_stack_size(t_stack **head);
 int		find_bits(int max_index);
 
 /*=================================================*/
-void	ft_print_stack(t_stack **head);
+//void	ft_print_stack(t_stack **head);
+//void	increment_operation_count();
 /*==================================================*/
 
 // utils
