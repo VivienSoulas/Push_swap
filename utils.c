@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:25 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/20 11:16:22 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/20 15:52:21 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,14 @@ int	ft_atoi_flag(char *str, int *error)
 	return (number * sign);
 }
 
-/* ===================================================================
-void	ft_print_stack(t_stack **head)
-{
-	t_stack	*current;
+//void	ft_print_stack(t_stack **head)
+//{
+//	t_stack	*current;
 
-	current = *head;
-	while (current)
-	{
-		ft_printf("value = %i, index = %i\n", current->content, current->index);
-		current = current->next;
-	}
-}=================================================================== */
+//	current = *head;
+//	while (current)
+//	{
+//		ft_printf("value = %i, index = %i\n", current->content, current->index);
+//		current = current->next;
+//	}
+//}

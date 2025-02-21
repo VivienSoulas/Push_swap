@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:13:19 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/20 11:19:05 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/20 15:52:49 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	ft_free_split(char **array);
 void	ft_sort(t_stack **head);
 void	ft_sort_2(t_stack **head);
 void	ft_sort_3(t_stack **head);
+void	ft_sort_4(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_5(t_stack **stack_a, t_stack **stack_b);
 void	ft_radix(t_stack **stack_a, t_stack **stack_b);
 
 // sort utils

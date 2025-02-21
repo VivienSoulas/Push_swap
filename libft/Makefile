@@ -73,7 +73,7 @@ $(NAME): $(OBJECTS)
 # $< = first prerequisite (aka : the source file being compiled)
 # $@ = target name (aka : object file)
 [%.o: %.c]
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re bonus
 
