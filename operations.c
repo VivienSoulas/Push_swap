@@ -6,17 +6,14 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:12:49 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:07:44 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/20 15:52:38 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------
-stack a; full of random numbers
-stack b; empty
-ss = sa + sb;
-rr = ra + rb;
-rrr = rra + rrb;
----------------------------------- */
+/* -------------------------------------*/
+/*	operation counts add at the end : 	*/
+/*	increment_operation_count(); 		*/
+/* -------------------------------------*/
 #include "push_swap.h"
 // use of double pointer in order to be able to change the head of the list
 

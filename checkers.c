@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:12:56 by vsoulas           #+#    #+#             */
-/*   Updated: 2025/02/13 17:34:43 by vsoulas          ###   ########.fr       */
+/*   Updated: 2025/02/20 18:35:02 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,14 @@ int	ft_check_arg(char *arg)
 	int	i;
 
 	i = 0;
+	if (arg[0] == '\0')
+		return (1);
 	if (arg[i] == '-' || arg[i] == '+')
+	{
+		if (!arg[i + 1])
+			return (1);
 		i++;
+	}
 	while (arg[i])
 	{
 		if (ft_isdigit(arg[i]) != 1 || arg[i] == '/')
