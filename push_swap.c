@@ -33,20 +33,8 @@ int	main(int argc, char **argv)
 	if (ft_check_dup(&stack_a) == 1)
 		return (ft_free_stack(&stack_a), ft_printf("Error\n"), 1);
 	ft_reverse_stack(&stack_a);
-
-/*===================================*/
-ft_printf("\n|!| bdfore sorting |!|\n");
-ft_print_stack(&stack_a);
-/*===================================*/
-
 	if (ft_check_list(&stack_a) == 1)
 		ft_sort(&stack_a);
-
-/*===================================*/
-ft_printf("\n|!| final stack |!|\n");
-ft_print_stack(&stack_a);
-/*===================================*/
-
 	ft_free_stack(&stack_a);
 	return (EXIT_SUCCESS);
 }
